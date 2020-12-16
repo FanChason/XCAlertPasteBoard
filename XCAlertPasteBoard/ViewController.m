@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "XCPasteBoardAlert.h"
+#import "XCTwoPasteBoardAlert.h"
 
 @interface ViewController ()
 
@@ -42,6 +43,9 @@
     [self customAlert];
 }
 
+- (IBAction)customer2Action {
+    [self custom2Alert];
+}
 
 
 - (void)systemAlert {
@@ -57,6 +61,16 @@
     XCPasteBoardAlert *alertView = [XCPasteBoardAlert loadAlertWithMessage:text];
     [alertView show];
 }
+
+- (void)custom2Alert {
+    NSString *msg = @"姓名：张三 \n年龄：18岁 \n性别：男 \n座右铭：后悔过去，不如奋斗将来！";
+    XCTwoPasteBoardAlert *alertView = [XCTwoPasteBoardAlert loadAlertWithMessage:msg];
+    alertView.clickBlock = ^(NSInteger index) {
+        NSLog(@"%li",index);
+    };
+    [alertView show];
+}
+
 
 
 @end

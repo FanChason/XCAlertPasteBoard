@@ -38,7 +38,7 @@
     [self.contentLabel addGestureRecognizer:labelTapGestureRecognizer];
 }
 
--(void) labelTouchUpInside:(UITapGestureRecognizer *)recognizer{
+-(void)labelTouchUpInside:(UITapGestureRecognizer *)recognizer{
    
    UILabel *label = (UILabel*)recognizer.view;
    NSLog(@"%@被点击了",label.text);
